@@ -43,20 +43,64 @@
 	<!--<link rel="stylesheet" type="text/css" href="2023/css/theme-halloween.css" id="theme-halloween">-->
 	<!--JS-->
 	<script src="https://duinocoin.com/assets/js/all.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+		integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 	<script src="https://wallet.duinocoin.com/js/jquery-ui.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<link rel="preconnect" href="https://www.google.com">
 	<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdJ9XsgAAAAAMShiVvOtZ4cAbvvdkw7sHKQDV-6"></script>
-	<link rel="preload" as="script" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6607105763246092" crossorigin="anonymous">
-	<script type="text/javascript" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6607105763246092" crossorigin="anonymous"></script>
-	<script tyle="text/javascript" src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js"></script>
+	<link rel="preload" as="script"
+		href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6607105763246092"
+		crossorigin="anonymous">
+	<script type="text/javascript" async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6607105763246092"
+		crossorigin="anonymous"></script>
+	<script tyle="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 
 <body>
+	<div class="snowflakes" aria-hidden="true">
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+		<div class="snowflake">
+			<div class="inner">❅</div>
+		</div>
+	</div>
 	<div class="section" id="register" style="display:none">
 		<div class="container">
 			<div class="columns">
@@ -81,7 +125,7 @@
 								We'll ask you some questions to make sure you understand
 								what Duino is all about.
 							</div>
-				<!--<div class="content" id="register_content_start">
+							<!--<div class="content" id="register_content_start">
 								Registration of new Duino-Coin accounts is (temporarily) disabled.<br>
 				In the meantime, you can try sticking around these communities for a similar experience:
 				<ul>
@@ -94,7 +138,8 @@
 				<button class="button is-fullwidth" onclick="location.reload()">
 								Back to login
 							</button>-->
-							<button class="button is-fullwidth is-success" id="register_start" onclick="register_quiz_start()">
+							<button class="button is-fullwidth is-success" id="register_start"
+								onclick="register_quiz_start()">
 								Start
 							</button>
 							<div class="content" id="register_content_1" style="display:none">
@@ -115,7 +160,8 @@
 								</button>
 							</div>
 							<div class="content" id="register_content_2" style="display:none">
-								Do you prefer cryptocurrencies with a decentralized network and the ability to run your own public nodes?
+								Do you prefer cryptocurrencies with a decentralized network and the ability to run your
+								own public nodes?
 							</div>
 							<div id="register_buttons_2" class="buttons" style="display:none">
 								<button class="button is-fullwidth long_button" onclick="register_quiz_2(1)">
@@ -129,7 +175,8 @@
 								</button>
 							</div>
 							<div class="content" id="register_content_3" style="display:none">
-								Do you value the ability to mine cryptocurrency on a wide range of low-cost, low-power devices?
+								Do you value the ability to mine cryptocurrency on a wide range of low-cost, low-power
+								devices?
 							</div>
 							<div id="register_buttons_3" class="buttons" style="display:none">
 								<button class="button is-fullwidth long_button" onclick="register_quiz_3(1)">
@@ -166,7 +213,8 @@
 							</div>
 							<div class="content" id="register_content_6" style="display:none">
 								Please get familiar with our <a href="https://duinocoin.com/terms">terms of service</a>:
-								<iframe class="mt-3" src="https://duinocoin.com/terms" height="300px" width="100%"></iframe>
+								<iframe class="mt-3" src="https://duinocoin.com/terms" height="300px"
+									width="100%"></iframe>
 							</div>
 							<div id="register_buttons_6" class="buttons" style="display:none">
 								<button class="button is-fullwidth long_button" onclick="register_quiz_end()">
@@ -184,22 +232,26 @@
 								Duino-Coin is <b>not primarily intended for those seeking
 									significant financial gains</b> or passive investments in the
 								cryptocurrency market. It offers a unique experience that
-								emphasizes low-power device mining, community involvement, and continuous learning.<br><br>
+								emphasizes low-power device mining, community involvement, and continuous
+								learning.<br><br>
 								If you are still interested in this coin, please <b>try taking the quiz again</b>.
-								<button class="button mt-3 is-fullwidth" id="register_start" onclick="register_quiz_start()">
+								<button class="button mt-3 is-fullwidth" id="register_start"
+									onclick="register_quiz_start()">
 									Try again
 								</button>
 							</div>
 						</center>
 						<div class="content" id="register_end_1" style="display:none">
 							<center>
-								Thanks for taking the quiz. Looks like <b>you will have a great time with Duino-Coin</b>! Let's proceed with the registration.
+								Thanks for taking the quiz. Looks like <b>you will have a great time with
+									Duino-Coin</b>! Let's proceed with the registration.
 							</center>
 							<div class="field">
 								<label for="input" class="label">Username</label>
 								<div class="field">
 									<p class="control has-icons-left">
-										<input class="input" id="register_username" type="text" placeholder="e.g. my_cool_username">
+										<input class="input" id="register_username" type="text"
+											placeholder="e.g. my_cool_username">
 										<span class="icon is-small is-left">
 											<i class="fas fa-user"></i>
 										</span>
@@ -208,14 +260,16 @@
 								</div>
 								<p class="subtitle is-size-6 has-text-info">
 									<i class="fa fa-info-circle"></i>
-									The username will also be your wallet address. It can consist of alphanumeric characters, numbers and underscores or dashes.
+									The username will also be your wallet address. It can consist of alphanumeric
+									characters, numbers and underscores or dashes.
 								</p>
 							</div>
 							<div class="field">
 								<label for="input" class="label">Password</label>
 								<div class="field">
 									<p class="control has-icons-left">
-										<input class="input" id="register_password" type="password" placeholder="******">
+										<input class="input" id="register_password" type="password"
+											placeholder="******">
 										<span class="icon is-small is-left">
 											<i class="fas fa-lock"></i>
 										</span>
@@ -231,7 +285,8 @@
 								<label for="input" class="label">Confirm Password</label>
 								<div class="field">
 									<p class="control has-icons-left">
-										<input class="input" id="register_password_c" type="password" placeholder="******">
+										<input class="input" id="register_password_c" type="password"
+											placeholder="******">
 										<span class="icon is-small is-left">
 											<i class="fas fa-lock"></i>
 										</span>
@@ -269,7 +324,8 @@
 								<label for="input" class="label">E-Mail</label>
 								<div class="field">
 									<p class="control has-icons-left">
-										<input class="input" id="register_email" type="email" placeholder="my@email.com">
+										<input class="input" id="register_email" type="email"
+											placeholder="my@email.com">
 										<span class="icon is-small is-left">
 											<i class="fas fa-at"></i>
 										</span>
@@ -285,7 +341,8 @@
 								</p>
 							</div>
 							<div class="field has-text-centered">
-								<div class="h-captcha" data-theme="dark" data-sitekey="1c77cf53-13bc-46a2-b358-84c6766be2bc"></div>
+								<div class="h-captcha" data-theme="dark"
+									data-sitekey="1c77cf53-13bc-46a2-b358-84c6766be2bc"></div>
 								<small id="captchainfo" class="has-text-danger"></small>
 							</div>
 							<div class="columns is-mobile">
@@ -293,7 +350,8 @@
 									<input class="is-checkbox mt-3" type="checkbox" id="check1">
 								</div>
 								<div class="column">
-									<label for="check1">I agree to receive <b>announcement e-mails</b> from Duino-Coin and when <b>something's happening with my account</b>.</label>
+									<label for="check1">I agree to receive <b>announcement e-mails</b> from Duino-Coin
+										and when <b>something's happening with my account</b>.</label>
 								</div>
 							</div>
 							<div class="columns is-mobile">
@@ -301,11 +359,14 @@
 									<input class="is-checkbox is-danger" type="checkbox" id="check2">
 								</div>
 								<div class="column">
-									<label for="check2">I understand that <b>some of my personal data will be saved</b>. For example, my saved <b>IP address may get reported to the AbuseIPDB list if I break the rules</b>.</label>
+									<label for="check2">I understand that <b>some of my personal data will be saved</b>.
+										For example, my saved <b>IP address may get reported to the AbuseIPDB list if I
+											break the rules</b>.</label>
 								</div>
 							</div>
 							<small class="has-text-danger" id="checkInfo"></small>
-							<button class="button mt-3 is-fullwidth is-success" onclick="register_end_2()" id="register_button">
+							<button class="button mt-3 is-fullwidth is-success" onclick="register_end_2()"
+								id="register_button">
 								Register
 							</button>
 						</div>
@@ -357,7 +418,8 @@
 								<label for="input" class="label">Username</label>
 								<div class="field">
 									<p class="control has-icons-left">
-										<input class="input" id="reset_username" type="text" placeholder="e.g. my_cool_username">
+										<input class="input" id="reset_username" type="text"
+											placeholder="e.g. my_cool_username">
 										<span class="icon is-small is-left">
 											<i class="fas fa-user"></i>
 										</span>
@@ -366,7 +428,8 @@
 								</div>
 							</div>
 							<div class="buttons">
-								<button class="button is-fullwidth is-success" onclick="generatePassword()" id="reset_button">
+								<button class="button is-fullwidth is-success" onclick="generatePassword()"
+									id="reset_button">
 									Send password reset link
 								</button>
 								<button class="button is-fullwidth" onclick="window.location.reload()">
@@ -425,18 +488,22 @@
 							<div class="field">
 								<label class="label">Username</label>
 								<div class="control">
-									<input id="login_username_desktop" class="input" type="text" placeholder="myCoolUsername" autocomplete="username">
+									<input id="login_username_desktop" class="input" type="text"
+										placeholder="myCoolUsername" autocomplete="username">
 								</div>
 							</div>
 							<div class="field">
 								<label class="label">Password</label>
 								<div class="control">
-									<input id="login_password_desktop" class="input" type="password" placeholder="*********" autocomplete="current-password">
+									<input id="login_password_desktop" class="input" type="password"
+										placeholder="*********" autocomplete="current-password">
 								</div>
 							</div>
 							<div class="field">
 								<div class="control">
-									<button class="button is-fullwidth g-recaptcha" data-callback="login" id="loginbutton_desktop" data-sitekey="6LdJ9XsgAAAAAMShiVvOtZ4cAbvvdkw7sHKQDV-6">
+									<button class="button is-fullwidth g-recaptcha" data-callback="login"
+										id="loginbutton_desktop"
+										data-sitekey="6LdJ9XsgAAAAAMShiVvOtZ4cAbvvdkw7sHKQDV-6">
 										Login
 									</button>
 								</div>
@@ -502,18 +569,21 @@
 					<div class="field">
 						<label class="label">Username</label>
 						<div class="control">
-							<input id="login_username" class="input" type="text" placeholder="myCoolUsername" autocomplete="username">
+							<input id="login_username" class="input" type="text" placeholder="myCoolUsername"
+								autocomplete="username">
 						</div>
 					</div>
 					<div class="field">
 						<label class="label">Password</label>
 						<div class="control">
-							<input id="login_password" class="input" type="password" placeholder="*********" autocomplete="current-password">
+							<input id="login_password" class="input" type="password" placeholder="*********"
+								autocomplete="current-password">
 						</div>
 					</div>
 					<div class="field">
 						<div class="control">
-							<button class="button is-fullwidth g-recaptcha" id="loginbutton" data-callback="login" data-sitekey="6LdJ9XsgAAAAAMShiVvOtZ4cAbvvdkw7sHKQDV-6">
+							<button class="button is-fullwidth g-recaptcha" id="loginbutton" data-callback="login"
+								data-sitekey="6LdJ9XsgAAAAAMShiVvOtZ4cAbvvdkw7sHKQDV-6">
 								Login
 							</button>
 						</div>
@@ -563,7 +633,8 @@
 					</a>
 				</center>
 			</div>
-			<div id="screen-user-desktop-nav" class="navbar-item navbar-button navbar-selected" onclick="screen('screen-user-desktop')">
+			<div id="screen-user-desktop-nav" class="navbar-item navbar-button navbar-selected"
+				onclick="screen('screen-user-desktop')">
 				<center>
 					<i class="fa fa-lg fa-home"></i>
 				</center>
@@ -574,7 +645,8 @@
 					<span class="info-dot"></span>
 				</center>
 			</div>
-			<div id="screen-achievements-desktop-nav" class="navbar-item navbar-button" onclick="screen('screen-achievements-desktop')">
+			<div id="screen-achievements-desktop-nav" class="navbar-item navbar-button"
+				onclick="screen('screen-achievements-desktop')">
 				<center>
 					<i class="fa fa-lg fa-trophy"></i>
 				</center>
@@ -598,7 +670,8 @@
 					<i class="beta fa fa-flask"></i>
 				</center>
 			</div>-->
-			<div id="screen-settings-desktop-nav" class="navbar-item navbar-button" style="margin-top: auto; margin-bottom: 80px" onclick="screen('screen-settings-desktop')">
+			<div id="screen-settings-desktop-nav" class="navbar-item navbar-button"
+				style="margin-top: auto; margin-bottom: 80px" onclick="screen('screen-settings-desktop')">
 				<center>
 					<i class="fa fa-lg fa-cog"></i>
 				</center>
@@ -609,7 +682,7 @@
 				<div class="tile is-parent">
 					<div class="tile is-child box p-5">
 						<p class="title is-size-4">
-							Devices	
+							Devices
 							&nbsp;<span class="tag is-success">starter.duinocoin.com</span>
 						</p>
 						<p class="subtitle">
@@ -624,7 +697,8 @@
 											<div class="columns">
 												<div class="column is-3">
 													<figure class="image">
-														<img src="https://shop.duinocoin.com/cdn/shop/files/discord-promo-2.jpg">
+														<img
+															src="https://shop.duinocoin.com/cdn/shop/files/discord-promo-2.jpg">
 													</figure>
 												</div>
 												<div class="column">
@@ -632,16 +706,22 @@
 														DUCO CUBE
 													</p>
 													<p class="subtitle is-size-6">
-														A modular desk organizer with a 1,69" IPS screen showing your Duino-Coin account stats, mining info and also serves as a clock. Powered by an ESP32 running our official firmware.
+														A modular desk organizer with a 1,69" IPS screen showing your
+														Duino-Coin account stats, mining info and also serves as a
+														clock. Powered by an ESP32 running our official firmware.
 													</p>
 													<div class="columns is-multiline is-vcentered">
 														<div class="column">
-															<a target="_blank" href="https://shop.duinocoin.com/products/duco-cube-miner-imperfect-print" class="button is-fullwidth has-text-success">
+															<a target="_blank"
+																href="https://shop.duinocoin.com/products/duco-cube-miner-imperfect-print"
+																class="button is-fullwidth has-text-success">
 																From 13.99 €
 															</a>
 														</div>
 														<div class="column">
-															<a target="_blank" href="https://shop.duinocoin.com/products/duino-cube-preorder" class="button is-fullwidth has-text-success">
+															<a target="_blank"
+																href="https://shop.duinocoin.com/products/duino-cube-preorder"
+																class="button is-fullwidth has-text-success">
 																From 19.99 €
 															</a>
 														</div>
@@ -655,7 +735,8 @@
 											<div class="columns">
 												<div class="column is-3">
 													<figure class="image">
-														<img src="https://shop.duinocoin.com/cdn/shop/files/blushybox_promo.png">
+														<img
+															src="https://shop.duinocoin.com/cdn/shop/files/blushybox_promo.png">
 													</figure>
 												</div>
 												<div class="column">
@@ -664,11 +745,14 @@
 													</p>
 													<p class="subtitle is-size-6">
 														A cute mining cube for your desk with real hashrate gauge.
-													Available in many colors, ESP8266 and ESP32 variants and with an optional DS18B20 temperature sensor.
+														Available in many colors, ESP8266 and ESP32 variants and with an
+														optional DS18B20 temperature sensor.
 													</p>
 													<div class="columns is-multiline is-vcentered">
 														<div class="column">
-															<a target="_blank" href="https://shop.duinocoin.com/products/duino-blushybox-miner" class="button is-fullwidth has-text-success">
+															<a target="_blank"
+																href="https://shop.duinocoin.com/products/duino-blushybox-miner"
+																class="button is-fullwidth has-text-success">
 																From 11.99€
 															</a>
 														</div>
@@ -697,7 +781,8 @@
 											<div class="columns">
 												<div class="column is-3">
 													<figure class="image">
-														<img src="https://shop.duinocoin.com/cdn/shop/files/cube_digital.png">
+														<img
+															src="https://shop.duinocoin.com/cdn/shop/files/cube_digital.png">
 													</figure>
 												</div>
 												<div class="column">
@@ -709,7 +794,9 @@
 													</p>
 													<div class="columns is-multiline is-vcentered">
 														<div class="column">
-															<a target="_blank" href="https://shop.duinocoin.com/products/duco-cube-blueprints" class="button is-fullwidth has-text-success">
+															<a target="_blank"
+																href="https://shop.duinocoin.com/products/duco-cube-blueprints"
+																class="button is-fullwidth has-text-success">
 																1.00€
 															</a>
 														</div>
@@ -733,7 +820,8 @@
 											<div class="columns">
 												<div class="column is-3">
 													<figure class="image">
-														<img src="https://shop.duinocoin.com/cdn/shop/files/blushydigital.png">
+														<img
+															src="https://shop.duinocoin.com/cdn/shop/files/blushydigital.png">
 													</figure>
 												</div>
 												<div class="column">
@@ -745,7 +833,9 @@
 													</p>
 													<div class="columns is-multiline is-vcentered">
 														<div class="column">
-															<a target="_blank" href="https://shop.duinocoin.com/products/duino-blushybox-blueprints" class="button is-fullwidth has-text-success">
+															<a target="_blank"
+																href="https://shop.duinocoin.com/products/duino-blushybox-blueprints"
+																class="button is-fullwidth has-text-success">
 																1.00€
 															</a>
 														</div>
@@ -782,7 +872,9 @@
 													</p>
 													<div class="columns is-multiline is-vcentered">
 														<div class="column">
-															<a target="_blank" href="https://shop.duinocoin.com/products/duino-starter-blueprints-digital" class="button is-fullwidth has-text-success">
+															<a target="_blank"
+																href="https://shop.duinocoin.com/products/duino-starter-blueprints-digital"
+																class="button is-fullwidth has-text-success">
 																1.00€
 															</a>
 														</div>
@@ -837,7 +929,8 @@
 
 							<div class="column">
 								<div class="notification">
-									Our merch store is temporarily unavailable as we're migrating the website to a new place. Please check later :)
+									Our merch store is temporarily unavailable as we're migrating the website to a new
+									place. Please check later :)
 								</div>
 							</div>
 
@@ -1046,17 +1139,20 @@
 			<div class="tile is-ancestor">
 				<div class="tile is-parent">
 					<div class="tile is-child box p-5">
-							<p class="title is-size-4">
-								Achievements - <span class="achievements_unlocked">0</span>/<span class="achievements_all">0</span> unlocked
-							</p>
-							<p class="subtitle">
-								Over time you will earn achievements from using Duino-Coin. Some of them give rewards (indicated with <i class="fa fa-coins" style="color:orange"></i>), some are quite hard to get. Can you get them all?
-							</p>
-							<div class="columns is-multiline achievements_content">Nothing here?</div>
-						</div>
+						<p class="title is-size-4">
+							Achievements - <span class="achievements_unlocked">0</span>/<span
+								class="achievements_all">0</span> unlocked
+						</p>
+						<p class="subtitle">
+							Over time you will earn achievements from using Duino-Coin. Some of them give rewards
+							(indicated with <i class="fa fa-coins" style="color:orange"></i>), some are quite hard to
+							get. Can you get them all?
+						</p>
+						<div class="columns is-multiline achievements_content">Nothing here?</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<div style="display:none;" class="container" id="screen-balance-desktop">
 			<div class="tile is-ancestor">
@@ -1082,7 +1178,8 @@
 						</p>
 						<p class="notification is-info">
 							<i class="fa fa-info-circle"></i>
-							This is an experimental feature subject to many changes in the future. Feel free to share feedback and submit PRs to improve it
+							This is an experimental feature subject to many changes in the future. Feel free to share
+							feedback and submit PRs to improve it
 						</p>
 						<p class="heading">
 							Settings
@@ -1094,10 +1191,10 @@
 								</label>
 							</div>
 							<div class="column is-narrow">
-						  		<input type="checkbox" checked id="iot-start-zero" onclick="refresh_iot_charts()">
-						  	</div>
+								<input type="checkbox" checked id="iot-start-zero" onclick="refresh_iot_charts()">
+							</div>
 
-						  	<div class="column is-narrow">
+							<div class="column is-narrow">
 								<label>Time range</label>
 							</div>
 							<div class="column is-narrow">
@@ -1126,7 +1223,8 @@
 									No data saved yet
 								</p>
 								<p class="subtitle is-size-5">
-									If you have setup Duino IoT on your device, wait at least 10 minutes - the charts need at least two data points to start showing up
+									If you have setup Duino IoT on your device, wait at least 10 minutes - the charts
+									need at least two data points to start showing up
 								</p>
 							</div>
 						</div>
@@ -1188,7 +1286,8 @@
 									iNFTernet
 								</span>
 							</a>
-							<a class="button" target="_blank" href="https://play.google.com/store/apps/details?id=com.protothis.duinocoin">
+							<a class="button" target="_blank"
+								href="https://play.google.com/store/apps/details?id=com.protothis.duinocoin">
 								<img class="icon" src="assets/companion_app.png">
 								<span>
 									Android app
@@ -1258,13 +1357,16 @@
 						<h1 class="heading">Change password</h1>
 						<div class="columns is-mobile">
 							<div class="column">
-								<input class="input" type="password" placeholder="Current password" id="changepass_old_desktop" autocomplete="current-password">
+								<input class="input" type="password" placeholder="Current password"
+									id="changepass_old_desktop" autocomplete="current-password">
 							</div>
 							<div class="column">
-								<input class="input" type="password" placeholder="New password" id="changepass_new_desktop" autocomplete="new-password">
+								<input class="input" type="password" placeholder="New password"
+									id="changepass_new_desktop" autocomplete="new-password">
 							</div>
 							<div class="column is-narrow">
-								<button class="button is-fullwidth" id="changepass_confirm_desktop" onclick="change_password_desktop()">
+								<button class="button is-fullwidth" id="changepass_confirm_desktop"
+									onclick="change_password_desktop()">
 									Change
 								</button>
 							</div>
@@ -1278,7 +1380,8 @@
 								</p>
 							</div>
 							<div class="column is-narrow">
-								<button class="button is-fullwidth" id="changekey_confirm_desktop" onclick="change_mining_key_desktop()">
+								<button class="button is-fullwidth" id="changekey_confirm_desktop"
+									onclick="change_mining_key_desktop()">
 									Set
 								</button>
 							</div>
@@ -1334,18 +1437,23 @@
 								<a href="https://gravatar.com" target="_blank">
 									<div class="media-left is-relative">
 										<figure class="image is-64x64">
-											<img class="is-rounded" id="useravatar" alt="User avatar" src="https://server.duinocoin.com/assets/achievements/more.png">
+											<img class="is-rounded" id="useravatar" alt="User avatar"
+												src="https://server.duinocoin.com/assets/achievements/more.png">
 										</figure>
-										<img id="hat" style="height:50px;width:50px;position:absolute;top:-1.75em;margin-left:10px;display:none;pointer-events: none;opacity:0.9">
-										<img id="sunglasses" style="height:64px;width:64px;position:absolute;top:-0.25em;display:none;pointer-events: none;opacity:0.9">
-										<img id="bowtie" style="height:44px;width:44px;position:absolute;top:2.3em;left:.6em;display:none;pointer-events: none;opacity:0.9">
+										<img id="hat"
+											style="height:50px;width:50px;position:absolute;top:-1.75em;margin-left:10px;display:none;pointer-events: none;opacity:0.9">
+										<img id="sunglasses"
+											style="height:64px;width:64px;position:absolute;top:-0.25em;display:none;pointer-events: none;opacity:0.9">
+										<img id="bowtie"
+											style="height:44px;width:44px;position:absolute;top:2.3em;left:.6em;display:none;pointer-events: none;opacity:0.9">
 									</div>
 								</a>
 								<div class="media-content">
 									<h1>
 										<span class="greeting">Welcome back</span>, <b class="username">user</b>!
 										<span class="badges">
-											<a target="_blank" href="https://server.duinocoin.com/verify.html" class="is-danger tag unverifiedbadge" style="display:none">
+											<a target="_blank" href="https://server.duinocoin.com/verify.html"
+												class="is-danger tag unverifiedbadge" style="display:none">
 												UNVERIFIED
 											</a>
 											<span class="is-success tag verifiedbadge" style="display:none;">
@@ -1399,13 +1507,9 @@
 						<a href="https://starter.duinocoin.com">
 							<img class="ducoadspace" style="display: none">
 						</a>
-						<ins class="adsbygoogle" 
-							  style="display:block"
-							  align="center" 
-							  data-ad-client="ca-pub-6607105763246092" 
-							  data-ad-slot="4819459320" 
-							  data-ad-format="horizontal" 
-							  data-full-width-responsive="true">
+						<ins class="adsbygoogle" style="display:block" align="center"
+							data-ad-client="ca-pub-6607105763246092" data-ad-slot="4819459320"
+							data-ad-format="horizontal" data-full-width-responsive="true">
 						</ins>
 						<div class="adblocker_detected" style="display:none">
 							<p class="title is-size-6 adblock_title"></p>
@@ -1417,7 +1521,9 @@
 			<div class="tile is-ancestor">
 				<div class="tile is-parent">
 					<div class="notification is-warning readonly_mode" style="display:none">
-						<b>Wallet is running in readonly mode because the main server isn't responding.</b> You're currently connected to a backup node while we're trying to mitigate the problem. Thanks for your patience ~ Duino Team
+						<b>Wallet is running in readonly mode because the main server isn't responding.</b> You're
+						currently connected to a backup node while we're trying to mitigate the problem. Thanks for your
+						patience ~ Duino Team
 					</div>
 				</div>
 			</div>
@@ -1453,7 +1559,9 @@
 											or two until their stats will appear here.
 										</p>
 										<p class="subtitle is-size-6">
-											Having issues? See the <b>Help</b> tab or launch the <a href="https://server.duinocoin.com/webminer.html" target="_blank">webminer</a> to get started easily.
+											Having issues? See the <b>Help</b> tab or launch the <a
+												href="https://server.duinocoin.com/webminer.html"
+												target="_blank">webminer</a> to get started easily.
 										</p>
 									</div>
 								</div>
@@ -1461,28 +1569,34 @@
 									<div class="notification has-text-info has-background-info-light">
 										<button class="delete" onclick="$(this).parent().fadeOut('fast')"></button>
 										<b>Invalid miner configuration detected!</b><br>
-										One or more miner is trying to mine on your account but has <b>an incorrect mining key entered</b>. If it's yours, double check your config files.
+										One or more miner is trying to mine on your account but has <b>an incorrect
+											mining key entered</b>. If it's yours, double check your config files.
 									</div>
 								</div>
 								<div class="minercount_exceeded mt-3" style="display:none">
 									<div class="notification has-text-danger has-background-danger-light">
 										<button class="delete" onclick="$(this).parent().fadeOut('fast')"></button>
 										<b>Max miner count exceeded!</b><br>
-										You're trying to run more mining threads than your account allows. <b>Make sure your account is verified or buy additional mining slots</b> to enable more miners.
+										You're trying to run more mining threads than your account allows. <b>Make sure
+											your account is verified or buy additional mining slots</b> to enable more
+										miners.
 									</div>
 								</div>
 								<div class="verified_minercount_exceeded mt-3" style="display:none">
 									<div class="notification has-text-danger has-background-danger-light">
 										<button class="delete" onclick="$(this).parent().fadeOut('fast')"></button>
 										<b>You're using more miners than you verified with!</b><br>
-										Trying to run more mining threads than you have submitted for the verification photo <b>will cause your account to receive warnings</b> - please resubmit the verification photo if you intend on expanding your rig.
+										Trying to run more mining threads than you have submitted for the verification
+										photo <b>will cause your account to receive warnings</b> - please resubmit the
+										verification photo if you intend on expanding your rig.
 									</div>
 								</div>
 							</div>
 							<div class="desktop-miners-navbar">
 								<div class="columns">
 									<div class="column is-2">
-										<button class="button is-fullwidth minertogglebutton" onclick="toggle_miner_view()">
+										<button class="button is-fullwidth minertogglebutton"
+											onclick="toggle_miner_view()">
 											<i class="fa fa-list"></i>
 										</button>
 									</div>
@@ -1584,7 +1698,10 @@
 					<div class="tile is-child box fullheight notstaking" style="display:none">
 						<h1 class="heading">Staking notice</h1>
 						<p class="subtitle is-size-6">
-							Staking has been phased out after we analyzed that it was being used mainly by large holders who didn't contribute to the network (such as mining or supporting the project) and ended up damaging the liquidity of the exchanges which is not the point of Duino-Coin. We may come up with a similar but improved system in the future.
+							Staking has been phased out after we analyzed that it was being used mainly by large holders
+							who didn't contribute to the network (such as mining or supporting the project) and ended up
+							damaging the liquidity of the exchanges which is not the point of Duino-Coin. We may come up
+							with a similar but improved system in the future.
 						</p>
 					</div>
 					<div class="tile is-child staking" style="display:none">
@@ -1658,7 +1775,8 @@
 											</span>
 										</p>
 										<p class="subtitle is-size-6">
-											The longer you leave the wallet open, the more accurate the estimate value will get
+											The longer you leave the wallet open, the more accurate the estimate value
+											will get
 										</p>
 									</div>
 									<div class="column is-narrow pr-5">
@@ -1695,7 +1813,8 @@
 										<label class="label">No. of devices</label>
 										<div class="field">
 											<div class="control">
-												<input class="input" id="input-devices" type="number" max="125" min="1" value="1">
+												<input class="input" id="input-devices" type="number" max="125" min="1"
+													value="1">
 											</div>
 										</div>
 									</div>
@@ -1703,7 +1822,8 @@
 										<label class="label">Hashrate</label>
 										<div class="field has-addons">
 											<div class="control">
-												<input class="input" id="input-hashrate" type="number" max="1000" min="1" value="1.2">
+												<input class="input" id="input-hashrate" type="number" max="1000"
+													min="1" value="1.2">
 											</div>
 											<p class="control">
 												<span class="select">
@@ -1733,7 +1853,8 @@
 							You have received <span class="warning_num">0</span> warning(s)!
 						</p>
 						<p class="subtitle is-size-6">
-							Whether you've used unofficial miners or someone was mining on your account because you haven't setup a mining key, you're in trouble.
+							Whether you've used unofficial miners or someone was mining on your account because you
+							haven't setup a mining key, you're in trouble.
 						</p>
 						<p class="subtitle is-size-6">
 							Check your e-mail or contact the support at
@@ -1755,7 +1876,8 @@
 							</a>
 						</h1>
 						<div class="iframe-container fullheight">
-							<iframe src="https://server.duinocoin.com/news.html" style="height:90%; width:100%" frameborder="0" allowtransparency="true">
+							<iframe src="https://server.duinocoin.com/news.html" style="height:90%; width:100%"
+								frameborder="0" allowtransparency="true">
 								Please wait
 							</iframe>
 						</div>
@@ -1782,7 +1904,8 @@
 					<h1 class="title is-size-6">
 						<span class="greeting">Welcome back</span>, <b class="username">user</b>!
 						<span class="badges">
-							<a target="_blank" href="https://server.duinocoin.com/verify.html" class="is-danger tag unverifiedbadge" style="display:none">
+							<a target="_blank" href="https://server.duinocoin.com/verify.html"
+								class="is-danger tag unverifiedbadge" style="display:none">
 								UNVERIFIED
 							</a>
 							<span class="is-success tag verifiedbadge" style="display:none">
@@ -1839,7 +1962,9 @@
 						</div>
 					</div>
 					<div class="box has-background-danger-light readonly_mode" style="display:none">
-						<b>Wallet is running in readonly mode because the main server isn't responding.</b> You're currently connected to a backup node while we're trying to mitigate the problem. Thanks for your patience ~ Duino Team
+						<b>Wallet is running in readonly mode because the main server isn't responding.</b> You're
+						currently connected to a backup node while we're trying to mitigate the problem. Thanks for your
+						patience ~ Duino Team
 					</div>
 					<div class="box has-background-danger-light unverified_box" style="display:none">
 						<p class="title is-size-6">
@@ -1858,7 +1983,8 @@
 							You have received <span class="warning_num">0</span> warning(s)!
 						</p>
 						<p class="subtitle is-size-6">
-							Whether you've used unofficial miners or someone was mining on your account because you haven't setup a mining key, you're in trouble.
+							Whether you've used unofficial miners or someone was mining on your account because you
+							haven't setup a mining key, you're in trouble.
 						</p>
 						<p class="subtitle is-size-6">
 							Check your e-mail or contact the support at
@@ -1901,7 +2027,10 @@
 					<div class="box notstaking" style="display:none">
 						<h1 class="heading">Staking notice</h1>
 						<p class="subtitle is-size-6">
-							Staking has been phased out after we analyzed that it was being used mainly by large holders who didn't contribute to the network (such as mining or supporting the project) and ended up damaging the liquidity of the exchanges which is not the point of Duino-Coin. We may come up with a similar but improved system in the future.
+							Staking has been phased out after we analyzed that it was being used mainly by large holders
+							who didn't contribute to the network (such as mining or supporting the project) and ended up
+							damaging the liquidity of the exchanges which is not the point of Duino-Coin. We may come up
+							with a similar but improved system in the future.
 						</p>
 					</div>
 					<div class="box has-background-success-light staking" style="display:none">
@@ -1922,7 +2051,9 @@
 						<a href="https://starter.duinocoin.com">
 							<img class="ducoadspace" style="display: none">
 						</a>
-						<ins class="adsbygoogle" style="display:block" align="center" data-ad-client="ca-pub-4670059148424169" data-ad-slot="4342121726" data-ad-format="vertical,rectangle" data-full-width-responsive="false">
+						<ins class="adsbygoogle" style="display:block" align="center"
+							data-ad-client="ca-pub-4670059148424169" data-ad-slot="4342121726"
+							data-ad-format="vertical,rectangle" data-full-width-responsive="false">
 						</ins>
 						<div class="adblocker_detected" style="display:none">
 							<p class="title is-size-6 adblock_title"></p>
@@ -2063,28 +2194,34 @@
 					<div class="nominers">
 						<p>
 							No miners detected.<br>
-							Having issues? See the <b>Help</b> tab or launch the <a href="https://server.duinocoin.com/webminer.html" target="_blank">webminer</a> to get started easily.
+							Having issues? See the <b>Help</b> tab or launch the <a
+								href="https://server.duinocoin.com/webminer.html" target="_blank">webminer</a> to get
+							started easily.
 						</p>
 					</div>
 					<div class="invalid_miner_keys mt-3" style="display:none">
 						<div class="notification has-text-info has-background-info-light">
 							<button class="delete" onclick="$(this).parent().fadeOut('fast')"></button>
 							<b>Invalid miner configuration detected</b><br>
-							One or more miner is trying to mine on your account but has <b>an incorrect mining key entered</b>. If it's yours, double check your config files.
+							One or more miner is trying to mine on your account but has <b>an incorrect mining key
+								entered</b>. If it's yours, double check your config files.
 						</div>
 					</div>
 					<div class="minercount_exceeded mt-3" style="display:none">
 						<div class="notification has-text-danger has-background-danger-light">
 							<button class="delete" onclick="$(this).parent().fadeOut('fast')"></button>
 							<b>Max miner count exceeded</b><br>
-							You're trying to run more mining threads than your account allows. <b>Make sure your account is verified or buy additional mining slots</b> to enable more miners.
+							You're trying to run more mining threads than your account allows. <b>Make sure your account
+								is verified or buy additional mining slots</b> to enable more miners.
 						</div>
 					</div>
 					<div class="verified_minercount_exceeded mt-3" style="display:none">
 						<div class="notification has-text-danger has-background-warning-light">
 							<button class="delete" onclick="$(this).parent().fadeOut('fast')"></button>
 							<b>You're using more miners than you verified with!</b><br>
-							Trying to run more mining threads than you have submitted for the verification photo <b>will cause your account to receive warnings</b> - please resubmit the verification photo if you intend on expanding your rig.
+							Trying to run more mining threads than you have submitted for the verification photo <b>will
+								cause your account to receive warnings</b> - please resubmit the verification photo if
+							you intend on expanding your rig.
 						</div>
 					</div>
 					<div class="columns is-mobile is-multiline miners-content"></div>
@@ -2161,7 +2298,8 @@
 								iNFTernet
 							</span>
 						</a>
-						<a class="button" target="_blank" href="https://play.google.com/store/apps/details?id=com.protothis.duinocoin">
+						<a class="button" target="_blank"
+							href="https://play.google.com/store/apps/details?id=com.protothis.duinocoin">
 							<img class="icon" src="assets/companion_app.png">
 							<span>
 								Android app
@@ -2231,10 +2369,12 @@
 					<h1 class="heading">Change password</h1>
 					<div class="columns is-mobile">
 						<div class="column">
-							<input class="input" type="password" placeholder="Current password" id="changepass_old" autocomplete="current-password">
+							<input class="input" type="password" placeholder="Current password" id="changepass_old"
+								autocomplete="current-password">
 						</div>
 						<div class="column">
-							<input class="input" type="password" placeholder="New password" id="changepass_new" autocomplete="new-password">
+							<input class="input" type="password" placeholder="New password" id="changepass_new"
+								autocomplete="new-password">
 						</div>
 						<div class="column is-narrow">
 							<button class="button is-fullwidth" id="changepass_confirm" onclick="change_password()">
@@ -2295,27 +2435,32 @@
 		</div>
 		<nav class="navbar is-hidden-desktop is-fixed-bottom has-shadow" role="navigation" aria-label="main navigation">
 			<div class="columns is-mobile is-centered navbar-menu">
-				<div id="screen-user-mobile-nav" class="column navbar-button navbar-selected" onclick="screen('screen-user-mobile');">
+				<div id="screen-user-mobile-nav" class="column navbar-button navbar-selected"
+					onclick="screen('screen-user-mobile');">
 					<center>
 						<i class="fa fa-lg fa-home"></i>
 					</center>
 				</div>
-				<div id="screen-transactions-mobile-nav" class="column navbar-button" onclick="screen('screen-transactions-mobile');">
+				<div id="screen-transactions-mobile-nav" class="column navbar-button"
+					onclick="screen('screen-transactions-mobile');">
 					<center>
 						<i class="fa fa-lg fa-exchange-alt"></i>
 					</center>
 				</div>
-				<div id="screen-miners-mobile-nav" class="column navbar-button" onclick="screen('screen-miners-mobile');">
+				<div id="screen-miners-mobile-nav" class="column navbar-button"
+					onclick="screen('screen-miners-mobile');">
 					<center>
 						<img style="height:1.3333em" src="assets/pick.svg">
 					</center>
 				</div>
-				<div id="screen-prices-mobile-nav" class="column navbar-button" onclick="screen('screen-prices-mobile');">
+				<div id="screen-prices-mobile-nav" class="column navbar-button"
+					onclick="screen('screen-prices-mobile');">
 					<center>
 						<i class="fas fa-money-bill-wave"></i>
 					</center>
 				</div>
-				<div id="screen-settings-mobile-nav" class="column navbar-button" onclick="screen('screen-settings-mobile');">
+				<div id="screen-settings-mobile-nav" class="column navbar-button"
+					onclick="screen('screen-settings-mobile');">
 					<center>
 						<i class="fa fa-lg fa-cog"></i>
 					</center>
@@ -2373,9 +2518,16 @@
 						<figure class="image">
 							<img src="https://i.imgur.com/kGK1Wct.png">
 						</figure>
-						Long story short, there is an opportunity for Duino-Coin to get listed on the <a href="https://Bitstorage.finance" target="_blank">Bitstorage.finance</a> exchange platform, there is however a listing fee which needs to be paid first so that they integrate DUCO. If we can get at least 750$ we should get listed with the "Basic" listing package, and if we get close to 1500$, we can hope for the "Advanced" package.<br><br>
-						<b>If you want to see some movement in Duino-Coin's trading, we would be very thankful for any cent sent to this fundraiser</b>. You'll also receive a shiny supporter badge on your account 🎖️<br>
-						We have currently raised: <span class="fundraiser_current">0$</span> out of <span class="fundraiser_goal">0$</span> (<span class="fundraiser_percentage">0%</span>)<br><br>
+						Long story short, there is an opportunity for Duino-Coin to get listed on the <a
+							href="https://Bitstorage.finance" target="_blank">Bitstorage.finance</a> exchange platform,
+						there is however a listing fee which needs to be paid first so that they integrate DUCO. If we
+						can get at least 750$ we should get listed with the "Basic" listing package, and if we get close
+						to 1500$, we can hope for the "Advanced" package.<br><br>
+						<b>If you want to see some movement in Duino-Coin's trading, we would be very thankful for any
+							cent sent to this fundraiser</b>. You'll also receive a shiny supporter badge on your
+						account 🎖️<br>
+						We have currently raised: <span class="fundraiser_current">0$</span> out of <span
+							class="fundraiser_goal">0$</span> (<span class="fundraiser_percentage">0%</span>)<br><br>
 						<div class="buttons">
 							<button class="button is-warning" onclick="fundraiser(this, 'btc')">
 								Show Bitcoin address
@@ -2390,7 +2542,10 @@
 						<div class="fundraiser_address"></div>
 						<br>
 						<span class="has-text-grey">
-							If you're up for helping, send any amount to one of the addresses above. When we detect a donation, you'll be sent an e-mail and a badge should appear within minutes on your account. If you have any questions or issues, please <a target="_blank" href="https://duinocoin.com/contact.html">contact us</a>.
+							If you're up for helping, send any amount to one of the addresses above. When we detect a
+							donation, you'll be sent an e-mail and a badge should appear within minutes on your account.
+							If you have any questions or issues, please <a target="_blank"
+								href="https://duinocoin.com/contact.html">contact us</a>.
 						</span>
 					</div>
 				</section>
@@ -2431,7 +2586,8 @@
 						<div class="columns is-mobile is-gapless is-vcentered">
 							<div class="column">
 								<div class="control">
-									<input id="send_amount" class="input" type="number" min="0" placeholder="e.g. 28.11">
+									<input id="send_amount" class="input" type="number" min="0"
+										placeholder="e.g. 28.11">
 								</div>
 							</div>
 							<div class="column is-narrow mx-3">
@@ -2556,7 +2712,8 @@
 					</div>
 					<span class="heading">Buy</span>
 					<div class="box">
-						Use one of the official exchanges to safely buy Duino-Coins. Guaranteed support and current exchange rates.
+						Use one of the official exchanges to safely buy Duino-Coins. Guaranteed support and current
+						exchange rates.
 					</div>
 					<div class="columns">
 						<div class="column">
@@ -2659,7 +2816,8 @@
 						<div class="columns is-mobile is-gapless is-vcentered mb-0">
 							<div class="column">
 								<div class="control">
-									<input id="wrap_amount" class="input" type="number" min="250" placeholder="e.g. 500">
+									<input id="wrap_amount" class="input" type="number" min="250"
+										placeholder="e.g. 500">
 								</div>
 							</div>
 							<div class="column is-narrow mx-3">
@@ -2667,18 +2825,23 @@
 							</div>
 						</div>
 						<p class="help mt-1">
-							Minimum <span class="wrap_min">501</span> DUCO. <b>A <span class="wrap_fee">500</span> DUCO network fee will apply</b>.
+							Minimum <span class="wrap_min">501</span> DUCO. <b>A <span class="wrap_fee">500</span> DUCO
+								network fee will apply</b>.
 						</p>
 					</div>
 					<div class="field">
 						<label class="label">Address</label>
 						<div class="control">
-							<input id="wrap_address" class="input" type="text" placeholder="e.g. TKjsbEfsYU7FvGYesjN5Gtz1s6hvZvsFzg">
+							<input id="wrap_address" class="input" type="text"
+								placeholder="e.g. TKjsbEfsYU7FvGYesjN5Gtz1s6hvZvsFzg">
 						</div>
 					</div>
 					<div class="notification has-text-danger">
 						<i class="fa fa-info-circle"></i>
-						Wraps are operated by a third party server. By wrapping you accept the risk of funds getting lost if something goes wrong. <a href="https://github.com/revoxhere/duino-coin/wiki/wDUCO-tutorial" target="_blank">Read more</a>
+						Wraps are operated by a third party server. By wrapping you accept the risk of funds getting
+						lost if something goes wrong. <a
+							href="https://github.com/revoxhere/duino-coin/wiki/wDUCO-tutorial" target="_blank">Read
+							more</a>
 					</div>
 					<div class="field">
 						<button class="button is-fullwidth is-info" id="wrap_confirm" onclick="wrap()">
@@ -2729,7 +2892,8 @@
 					</div>
 					<div class="column">
 						<span>
-							Achievements - <span class="achievements_unlocked">0</span>/<span class="achievements_all">0</span>
+							Achievements - <span class="achievements_unlocked">0</span>/<span
+								class="achievements_all">0</span>
 						</span>
 					</div>
 				</div>
@@ -2737,7 +2901,9 @@
 			<div class="container">
 				<section class="section">
 					<div class="notification is-size-6">
-						Over time you will earn achievements from using Duino-Coin. Some of them give rewards (indicated with <i class="fa fa-coins" style="color:orange"></i>), some are quite hard to get. <i>Can you get them all?</i>
+						Over time you will earn achievements from using Duino-Coin. Some of them give rewards (indicated
+						with <i class="fa fa-coins" style="color:orange"></i>), some are quite hard to get. <i>Can you
+							get them all?</i>
 					</div>
 					<div class="columns is-multiline achievements_content">Nothing here?</div>
 				</section>
@@ -2793,12 +2959,18 @@
 							</summary>
 							<p class="subtitle is-size-6">
 								Possible solutions:<br>
-								1. Make sure you've entered the correct mining key into your miners (it's case sensitive).<br>
+								1. Make sure you've entered the correct mining key into your miners (it's case
+								sensitive).<br>
 								2. Once again check that you've entered the correct mining key into your miners.<br>
-								3. For the third time check that you've entered the correct mining key into your miners. Really.<br>
-								4. Ensure you've entered the correct username into your miners (it's case sensitive).<br>
-								5. Check if your miners are actually mining. For AVR and PCs - just read what the mining window says. For ESPs - connect them to a computer and inspect debug messages via serial monitor.<br>
-								6. Check if our servers aren't having any issues right now - <a href="https://status.duinocoin.com" target="_blank">visit status.duinocoin.com</a>.
+								3. For the third time check that you've entered the correct mining key into your miners.
+								Really.<br>
+								4. Ensure you've entered the correct username into your miners (it's case
+								sensitive).<br>
+								5. Check if your miners are actually mining. For AVR and PCs - just read what the mining
+								window says. For ESPs - connect them to a computer and inspect debug messages via serial
+								monitor.<br>
+								6. Check if our servers aren't having any issues right now - <a
+									href="https://status.duinocoin.com" target="_blank">visit status.duinocoin.com</a>.
 							</p>
 						</details>
 					</div>
@@ -2814,7 +2986,8 @@
 								3. Try a different device and/or a different web browser.<br>
 								4. Make sure nothing is blocking access to server.duinocoin.com.<br>
 								5. Restart your internet router.<br>
-								6. Check if our servers aren't having any issues right now - <a href="https://status.duinocoin.com" target="_blank">visit status.duinocoin.com</a>.
+								6. Check if our servers aren't having any issues right now - <a
+									href="https://status.duinocoin.com" target="_blank">visit status.duinocoin.com</a>.
 							</p>
 						</details>
 					</div>
@@ -2825,12 +2998,15 @@
 							</summary>
 							<p class="subtitle is-size-6">
 								Possible solutions:<br>
-								1. Check if the configuration is correct. Try a fresh start by deleting existing files.<br>
+								1. Check if the configuration is correct. Try a fresh start by deleting existing
+								files.<br>
 								2. Make sure your internet connection is stable.<br>
 								3. If using ESPs/AVRs, make sure they get sufficient power.<br>
 								4. If using ESPs, make sure your router can handle that many clients.<br>
-								5. If using AVRs, make sure your USB hub/concentrator can handle that many devices (e.g. Raspberry Pis can handle no more than 11 USB devices).<br>
-								6. If your miners disconnect once every 24 hours then it's all fine - servers restart periodically and so the miners.<br>
+								5. If using AVRs, make sure your USB hub/concentrator can handle that many devices (e.g.
+								Raspberry Pis can handle no more than 11 USB devices).<br>
+								6. If your miners disconnect once every 24 hours then it's all fine - servers restart
+								periodically and so the miners.<br>
 							</p>
 						</details>
 					</div>
@@ -2856,4 +3032,3 @@
 </body>
 
 </html>
-

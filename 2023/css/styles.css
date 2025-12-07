@@ -117,22 +117,22 @@
 }
 
 .fa-flask path {
-  stroke: white;
-  stroke-width: 30px;
+    stroke: white;
+    stroke-width: 30px;
 }
 
 .is-fixed-left {
-    z-index:100;
+    z-index: 100;
     position: fixed;
-    background-color: rgba(255,255,255, 0.85) !important;
-    left:0;
-    top:0;
-    width:4vw;
-    height:100vh;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    left: 0;
+    top: 0;
+    width: 4vw;
+    height: 100vh;
     flex-direction: column;
-    display: flex;  
+    display: flex;
     align-items: center;
-    padding-top:40px;
+    padding-top: 40px;
 }
 
 #userbox-wrapper {
@@ -145,7 +145,7 @@
 }
 
 
-.is-fixed-left > div {
+.is-fixed-left>div {
     zoom: 1.1;
 }
 
@@ -369,9 +369,10 @@ progress.show-value.is-large:after {
     text-shadow: 0px 0px 2px black;
     vertical-align: middle;
 }
+
 .tag>i {
-  position: relative;
-  top: 4px !important;
+    position: relative;
+    top: 4px !important;
 }
 
 .login-text-desktop {
@@ -529,7 +530,8 @@ input[type="checkbox"]:checked::before {
             filter: brightness(90%) contrast(190%) blur(3px);
         }
 
-        .box, .is-fixed-left {
+        .box,
+        .is-fixed-left {
             background-color: rgba(16, 16, 16, 0.85) !important;
         }
 
@@ -750,44 +752,169 @@ a:active {
     animation: blink 1s linear infinite;
 }
 
- Christmas progress bars
-progress::-webkit-progress-bar {
-  background-color: #fff;
-  border-radius: 15px;
+Christmas progress bars progress::-webkit-progress-bar {
+    background-color: #fff;
+    border-radius: 15px;
 }
 
 progress::-webkit-progress-value {
-  background: repeating-linear-gradient(60deg, #e44d26, #e44d26 15px, #fff 15px, #fff 30px);
-  border-radius: 15px;
-  background-size: 30px 30px;
+    background: repeating-linear-gradient(60deg, #e44d26, #e44d26 15px, #fff 15px, #fff 30px);
+    border-radius: 15px;
+    background-size: 30px 30px;
 }
 
 progress::-moz-progress-bar {
-  background: repeating-linear-gradient(60deg, #e44d26, #e44d26 15px, #fff 15px, #fff 30px);
-  border-radius: 15px;
-  background-size: 30px 30px;
+    background: repeating-linear-gradient(60deg, #e44d26, #e44d26 15px, #fff 15px, #fff 30px);
+    border-radius: 15px;
+    background-size: 30px 30px;
 }
 
-/*.snowflake {
-  color: #fff;
-  z-index: 0 !important;
-  font-size: 1em;
-  font-family: Arial, sans-serif;
-  text-shadow: 0 0 5px #000;
+.snowflake {
+    color: #fff;
+    z-index: 0 !important;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
 }
- 
-.snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
 
-*/
+.snowflake,
+.snowflake .inner {
+    animation-iteration-count: infinite;
+    animation-play-state: running
+}
 
+@keyframes snowflakes-fall {
+    0% {
+        transform: translateY(0)
+    }
 
+    100% {
+        transform: translateY(110vh)
+    }
+}
 
+@keyframes snowflakes-shake {
 
+    0%,
+    100% {
+        transform: translateX(0)
+    }
 
+    50% {
+        transform: translateX(80px)
+    }
+}
 
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-shake;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out
+}
 
+.snowflake .inner {
+    animation-duration: 10s;
+    animation-name: snowflakes-fall;
+    animation-timing-function: linear
+}
 
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s
+}
 
+.snowflake:nth-of-type(0) .inner {
+    animation-delay: 0s
+}
 
+.snowflake:first-of-type {
+    left: 10%;
+    animation-delay: 1s
+}
 
+.snowflake:first-of-type .inner,
+.snowflake:nth-of-type(8) .inner {
+    animation-delay: 1s
+}
 
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    animation-delay: .5s
+}
+
+.snowflake:nth-of-type(2) .inner,
+.snowflake:nth-of-type(6) .inner {
+    animation-delay: 6s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(11) .inner,
+.snowflake:nth-of-type(3) .inner {
+    animation-delay: 4s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(10) .inner,
+.snowflake:nth-of-type(4) .inner {
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 3s
+}
+
+.snowflake:nth-of-type(5) .inner {
+    animation-delay: 8s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 1s
+}
+
+.snowflake:nth-of-type(7) .inner {
+    animation-delay: 2.5s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 1.5s
+}
+
+.snowflake:nth-of-type(9) .inner {
+    animation-delay: 3s
+}
+
+.snowflake:nth-of-type(10) {
+    left: 25%;
+    animation-delay: 0s
+}
+
+.snowflake:nth-of-type(11) {
+    left: 65%;
+    animation-delay: 2.5s
+}
