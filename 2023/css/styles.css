@@ -527,7 +527,7 @@ input[type="checkbox"]:checked::before {
 
         body:before {
             opacity: 0.6;
-            filter: brightness(90%) contrast(190%) blur(3px);
+         /*   filter: brightness(90%) contrast(190%) blur(3px);*/
         }
 
         .box,
@@ -917,4 +917,5 @@ progress::-moz-progress-bar {
 .snowflake:nth-of-type(11) {
     left: 65%;
     animation-delay: 2.5s
+
 }
