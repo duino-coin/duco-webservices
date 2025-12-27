@@ -105,4 +105,17 @@ body:before {
 
 .letter div:before {
     content: counter(timer, lower-alpha);
+
+}
+
+.notification.is-info {
+  background-color: #5fb6ff !important;
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .notification.is-info {
+    background-color: #163548 !important;
+    color: #fff;
+  }
 }
