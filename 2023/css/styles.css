@@ -484,7 +484,7 @@ input[type="checkbox"]:checked::before {
         /* background-image: url("/assets/backgrounds/revox-sea.jpg") !important;*/
         /* background-image: url("/assets/backgrounds/revox.jpg") !important; */
         /* background-image: url("/assets/backgrounds/yenn-mountains-2.jpg") !important; */
-        background-image: url("/assets/backgrounds/Pastel_Mountain_low.JPG") !important;
+        /* background-image: url("/assets/backgrounds/Pastel_Mountain_low.JPG") !important; */
         /* background-image: url("/assets/backgrounds/eberhardgross-1.jpg") !important; */
         /* background-image: url("/assets/backgrounds/yenn-sea-1.jpg") !important; */
         /* background-image: url("/assets/backgrounds/yenn-mountains-1.jpg") !important; */
@@ -527,7 +527,7 @@ input[type="checkbox"]:checked::before {
 
         body:before {
             opacity: 0.6;
-         /*   filter: brightness(90%) contrast(190%) blur(3px);*/
+            /*   filter: brightness(90%) contrast(190%) blur(3px);*/
         }
 
         .box,
@@ -769,6 +769,8 @@ progress::-moz-progress-bar {
     background-size: 30px 30px;
 }
 
+/* 
+Xmass snow
 .snowflake {
     color: #fff;
     z-index: 0 !important;
@@ -919,3 +921,4 @@ progress::-moz-progress-bar {
     animation-delay: 2.5s
 
 }
+ */
