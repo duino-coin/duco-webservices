@@ -197,7 +197,7 @@
 
 /* Progress bar with value display */
 progress.show-value {
-    color: white;
+    color: green;
     position: relative;
 }
 
@@ -921,4 +921,5 @@ Xmass snow
     animation-delay: 2.5s
 
 }
+
  */
