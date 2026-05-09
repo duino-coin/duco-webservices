@@ -843,7 +843,8 @@ function create_prices(prices) {
     delete prices.nodes;
     delete prices.furim;
     delete prices.fluffy;
-    delete prices.nano; // currently unavailable
+    //delete prices.nano; // currently unavailable
+    delete prices.xmg; // currently unavailable
 
     // global price
     if (prices["max"]["price"] > 0) {
