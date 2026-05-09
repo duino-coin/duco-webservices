@@ -1682,7 +1682,7 @@ const user_data = (username, first_open) => {
                             </small>`);
                 }
 
-                $("#ducousd_xmg").html("$" + round_to(7, data.prices.xmg));
+               // $("#ducousd_xmg").html("$" + round_to(7, data.prices.xmg));
                 $("#ducousd_bch").html("$" + round_to(7, data.prices.bch));
                 $("#ducousd_trx").html("$" + round_to(7, data.prices.trx));
                 $("#ducousd_nano").html("$" + round_to(7, data.prices.nano));
