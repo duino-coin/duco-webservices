@@ -485,8 +485,8 @@ input[type="checkbox"]:checked::before {
         /* background-image: url("/assets/backgrounds/revox.jpg") !important; */
         /* background-image: url("/assets/backgrounds/yenn-mountains-2.jpg") !important; */
         /* background-image: url("/assets/backgrounds/Pastel_Mountain_low.JPG") !important; */
-        background-image: url("/assets/backgrounds/eberhardgross-1.jpg") !important;
-        /* background-image: url("/assets/backgrounds/yenn-sea-1.jpg") !important; */
+        /* background-image: url("/assets/backgrounds/eberhardgross-1.jpg") !important; */
+         background-image: url("/assets/backgrounds/yenn-sea-1.jpg") !important; 
         /* background-image: url("/assets/backgrounds/yenn-mountains-1.jpg") !important; */
         /* background-image: url("/assets/backgrounds/jpx13-spring-1.jpg") !important; */
         background-repeat: no-repeat;
