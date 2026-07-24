@@ -381,7 +381,7 @@ let miner_template1 = `
                 </p>
                 <p class="subtitle is-size-6 shorttext">
                     {{HASH}}
-                    &bull; 
+                    &bull;
                     <span class="{{EFF_COLOR}}">{{EFF}}</span>
                     <span class="is-hidden-mobile">({{EFF_COUNT}} shares)</span>
                     <span class="is-hidden-mobile">{{DIFF}}</span>
@@ -418,7 +418,7 @@ const miner_template2 = `
         <div class="column ml-1 is-3 has-text-right">
             <span>
                 {{HASH}}
-            </span> 
+            </span>
         </div>
         <div class="column is-narrow mr-3 ml-3" onclick="miner_details('{{MINER_NUM}}')">
             <i class="fa fa-chevron-right"></i>
@@ -662,7 +662,7 @@ function adblock_check() {
             $(".ducoadspace").hide();
             $('.adsbygoogle').fadeIn();
         }
-    }, 1000); 
+    }, 1000);
 }
 
 
@@ -2044,7 +2044,7 @@ function miner_details(miner_id) {
             </div>
             <div class="column">
                 <b>
-                    ${miners[miner_id]["accepted"]} 
+                    ${miners[miner_id]["accepted"]}
                     /
                     ${miners[miner_id]["accepted"]+miners[miner_id]["rejected"]}
                 </b> (${round_to(1, (miners[miner_id]["accepted"]/
@@ -2070,8 +2070,8 @@ function miner_details(miner_id) {
                 Efficiency
             </div>
             <div class="column">
-                <progress class="progress ${efficiency_color} show-value" 
-                          min="0" max="100" 
+                <progress class="progress ${efficiency_color} show-value"
+                          min="0" max="100"
                           value="${miner_efficiency}">
                     ${miner_efficiency}
                 </progress>
@@ -3327,8 +3327,8 @@ function register_end_2() {
                 $("#register_button").removeClass("is-loading");
                 alert_bulma(`Your web browser couldn't connect to the Duino-Coin servers.<br><br>
 
-                We'd like to help, but there are many possible causes - 
-                before asking the support, try disabling your browser extensions 
+                We'd like to help, but there are many possible causes -
+                before asking the support, try disabling your browser extensions
                 or similar programs and try again.<br><br>
 
                 Make sure nothing blocks server2.duinocoin.com`);
@@ -3474,8 +3474,8 @@ function generatePassword() {
                 $("#reset_button").removeClass("is-loading");
                 alert_bulma(`Your web browser couldn't connect to the Duino-Coin servers.<br><br>
 
-                    We'd like to help, but there are many possible causes - 
-                    before asking the support, try disabling your browser extensions 
+                    We'd like to help, but there are many possible causes -
+                    before asking the support, try disabling your browser extensions
                     or similar programs and try again.<br><br>
 
                     Make sure nothing blocks server2.duinocoin.com`);
@@ -3506,8 +3506,8 @@ if (recovery_username && recovery_hash) {
         .catch(err => {
             alert_bulma(`Your web browser couldn't connect to the Duino-Coin servers.<br><br>
 
-                We'd like to help, but there are many possible causes - 
-                before asking the support, try disabling your browser extensions 
+                We'd like to help, but there are many possible causes -
+                before asking the support, try disabling your browser extensions
                 or similar programs and try again.<br><br>
 
                 Make sure nothing blocks server2.duinocoin.com`);
@@ -3745,3 +3745,46 @@ function updateValueDevices(e) {
 if (localStorage.getItem("shop-open-duco-cube")) {
     $(".info-dot").fadeOut();
 }
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('Service Worker registered successfully with scope: ', registration.scope);
+      })
+      .catch((error) => {
+        console.log('Service Worker registration failed: ', error);
+      });
+  });
+}
+
+let deferredPrompt;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const installButton = document.getElementById('pwa-install-btn');
+
+  if (!installButton) return;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    // Set to empty string to remove 'display: none' and let your CSS take over
+    installButton.style.display = '';
+  });
+
+  installButton.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User installation response: ${outcome}`);
+
+    if (outcome === 'accepted') {
+      installButton.style.display = 'none';
+    }
+
+    deferredPrompt = null;
+  });
+});

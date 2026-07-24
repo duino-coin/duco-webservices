@@ -58,6 +58,8 @@
 		src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="theme-color" content="#ff4112">
+	<link rel="apple-touch-icon" href="/assets/duco-192.png">
 </head>
 
 <body>
@@ -132,7 +134,7 @@
 					<li><a href="https://foldingathome.org" target="_blank">Folding@home</a></li>
 					<li><a href="https://www.mysterium.network" target="_blank">Mysterium MYST</a></li>
 				</ul><br>
-				This message will be updated when a conclusive decision will be made. Sorry for any inconvenience. 
+				This message will be updated when a conclusive decision will be made. Sorry for any inconvenience.
 							</div>
 				<button class="button is-fullwidth" onclick="location.reload()">
 								Back to login
@@ -656,6 +658,11 @@
 					<i class="beta fa fa-flask"></i>
 				</center>
 			</div>
+			<div id="pwa-install-btn" class="navbar-item navbar-button" title="Install App" style="display: none;">
+                <center>
+                    <i class="fa fa-lg fa-download"></i>
+                </center>
+			</div>
 			<div class="navbar-item navbar-button">
 				<center>
 					<a href="https://duinocoin.com/donate.html" target="_blank">
@@ -961,11 +968,11 @@
 											<a target="_blank" href="https://store.duinocoin.com/listing/outlined-logo-collection?product=1303&variation=104485" class="button is-fullwidth">
 												View in store
 											</a>
-										</div> 
+										</div>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="column" style="min-width:280px">
 								<div class="box">
 									<div class="columns">
@@ -993,7 +1000,7 @@
 											<a target="_blank" href="https://store.duinocoin.com/listing/drip-collection-december-2021?product=1566&variation=104936" class="button is-fullwidth">
 												View in store
 											</a>
-										</div> 
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1011,7 +1018,7 @@
 												Stonks tee
 											</p>
 											<p class="subtitle is-size-6">
-												Stonks or not stonks? 
+												Stonks or not stonks?
 											</p>
 										</div>
 									</div>
@@ -1025,7 +1032,7 @@
 											<a target="_blank" href="https://store.duinocoin.com/listing/june-2022-duino-stonks?product=389&variation=100019" class="button is-fullwidth">
 												View in store
 											</a>
-										</div> 
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1043,7 +1050,7 @@
 												Pullover hoodie
 											</p>
 											<p class="subtitle is-size-6">
-												Classic, warm hoodie with the Duino logo 
+												Classic, warm hoodie with the Duino logo
 											</p>
 										</div>
 									</div>
@@ -1057,7 +1064,7 @@
 											<a target="_blank" href="https://store.duinocoin.com/listing/drip-collection-december-2021?product=377&variation=100057&size=3029" class="button is-fullwidth">
 												View in store
 											</a>
-										</div> 
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1089,7 +1096,7 @@
 											<a target="_blank" href="https://store.duinocoin.com/listing/basic-duino-tee?product=389&variation=100019" class="button is-fullwidth">
 												View in store
 											</a>
-										</div> 
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1121,7 +1128,7 @@
 											<a target="_blank" href="https://store.duinocoin.com/listing/duino-coin-accessories?product=1566&variation=104936" class="button is-fullwidth">
 												View in store
 											</a>
-										</div> 
+										</div>
 									</div>
 								</div>
 							</div>
@@ -3027,7 +3034,14 @@
 			<span id="alert_content">CONTENT</span>
 		</div>
 	</div>
-	<script src="2023/js/main.js?v=4"></script>
+
+    <script src="2023/js/main.js?v=4"></script>
+    <script>
+      let deferredPrompt;
+      const installBanner = document.getElementById('pwa-install-banner');
+      const installButton = document.getElementById('pwa-install-btn');
+
+    </script>
 </body>
 
 
