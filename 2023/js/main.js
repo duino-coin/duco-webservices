@@ -565,6 +565,14 @@ function login(token, connect_timeout = 5000) {
 
                 user_data(username, true);
                 setInterval(function() { user_data(username) }, 5000);
+                /* Browsers freeze a hidden tab's timers, so the 5 s refresh
+                   above stops and the earnings window stops growing. Waiting
+                   for the next tick is not enough on the way back: it may be
+                   minutes away, and until a sample lands the window holds one
+                   enormous step which is correctly discarded as a gap. */
+                document.addEventListener("visibilitychange", function() {
+                    if (!document.hidden) user_data(username);
+                });
 
                 if (on_mobile()) {
                     $("#login-mobile").hide(function() {
@@ -721,14 +729,6 @@ let iot_collapsed = JSON.parse(localStorage.getItem("iot_collapsed"));
 if (!iot_collapsed) {
     $(".iotspan").html("<i class='fa fa-caret-right'></i>&nbsp;IOT DATA");
     $(".iotdata").hide('normal');
-}
-
-
-function refresh_calcs() {
-    $(".estimatedprofits").fadeOut(function() {
-        $(".estimatedprofits_wait").fadeIn();
-    });
-    let start_balance = 0;
 }
 
 
@@ -970,27 +970,234 @@ function close_alert() {
 }
 
 
-let start_balance = 0;
+/* Nothing older than this is kept. A longer history is not more accurate,
+   it is more INERT: an average answers a change with a time constant equal
+   to its own length, and it averages across different payout regimes -
+   weekend mining pays a multiple of a weekday, so a 24 h average straddling
+   Sunday midnight sits far above what a rig earns on Monday and needs
+   another day to let go of it. That reading is not even wrong; it is a
+   correct average of two regimes, and useless for "what am I earning now". */
+const DAILY_KEEP_MS = 90 * 60 * 1000;
+/* Windows reported, shortest first. No 5-minute window: with steps of at
+   least DAILY_MIN_STEP_MS it holds four at best, and four steps give a band
+   near 50%, which is not an answer. It also empties out whenever the browser
+   throttles a background tab's timers toward one per minute. */
+const DAILY_WINDOWS_MS = [15 * 60 * 1000, 30 * 60 * 1000,
+                          60 * 60 * 1000, 90 * 60 * 1000];
+/* The headline uses the shortest window whose band is within this. Short is
+   preferred because the rate itself changes; a longer window answers a
+   staler question. */
+const DAILY_GOOD_BAND_PCT = 15;
+/* The balance advances in bursts of tens of seconds, so a step shorter than
+   this measures a burst rather than a rate. Samples closer together are
+   MERGED, not dropped, so every DUC stays in the numerator. */
+const DAILY_MIN_STEP_MS = 60 * 1000;
+/* Longer than this is a gap in sampling - the page was in the background,
+   or the server was unreachable - and a gap is not a measurement. Keeping
+   one lets its duration into the span and dilutes anything credited during
+   it until it slips under the test below. */
+const DAILY_MAX_STEP_MS = 12 * 60 * 1000;
+/* Fewer steps than this and a transaction cannot be told apart from mining:
+   one step has nothing to be compared against. */
+const DAILY_MIN_STEPS = 3;
+/* A step this many times faster than the window's median is a transaction
+   or a big block, not mining. Relative, so it holds for a single ESP8266 as
+   well as for a large rig, and it only holds this low because
+   DAILY_MIN_STEP_MS keeps the steps comparable in length. */
+const DAILY_STEP_OUTLIER = 4;
 
-function calculdaily(newb, oldb, user_items) {
-    /* Accurate daily calculator by Lukas */
-    // Ducos since start / time * day
-    if (start_balance == 0) {
-        start_balance = newb;
-        start_time = Date.now();
-    } else {
-        let daily = 86400000 * (newb - start_balance) / (Date.now() - start_time);
-        // Large values mean transaction or big block - ignore this value
-        if (daily > 0 && daily < 500 && miners.length) {
-            daily = round_to(1, daily);
-            $(".dailyprofit").text(daily)
-            $(".estimatedprofits_wait").fadeOut(function() {
-                $(".estimatedprofits_nominers").fadeOut(function() {
-                    $(".estimatedprofits").fadeIn();
-                });
-            });
+let daily_samples = [];
+
+/* Drop anything past the retention window, and any repeated timestamp.
+   Kept separate from the merging below: the raw samples are what the panel
+   reports the sampling CADENCE from, and merging them away would hide the
+   very thing that line exists to show. */
+function daily_prune(samples, now) {
+    let out = [];
+    for (let s of samples) {
+        if (now - s[0] > DAILY_KEEP_MS) continue;
+        let last = out[out.length - 1];
+        if (last && s[0] <= last[0]) continue;
+        out.push(s);
+    }
+    return out;
+}
+
+/* Merge samples closer together than DAILY_MIN_STEP_MS, anchored on the
+   newest one: the recent end is what a reader cares about, so it keeps its
+   exact timestamp and the merging runs backwards. */
+function daily_coalesce(samples) {
+    let out = [];
+    for (let i = samples.length - 1; i >= 0; i--) {
+        let last = out[out.length - 1];
+        if (!last || last[0] - samples[i][0] >= DAILY_MIN_STEP_MS) {
+            out.push(samples[i]);
         }
     }
+    return out.reverse();
+}
+
+/* DUC/day over one window, with the uncertainty that comes with it.
+   Returns { rate, band, span, steps, dropped }; rate is null when there is
+   not enough of a window yet.
+
+   Sums the steps it keeps rather than subtracting the endpoints, so
+   rejecting a step costs one step instead of the whole window. */
+function daily_estimate(samples, window_ms, now) {
+    let merged = daily_coalesce(samples);
+    let steps = [];
+    /* Gaps are COUNTED, not dropped in silence. A window whose only step is
+       a gap is the signature of a backgrounded tab - browsers freeze a hidden
+       tab's timers, so sampling stops and resumes with one enormous step -
+       and that is a different situation from having no data yet. Telling the
+       reader to wait would be wrong advice: nothing arrives until the tab is
+       in the foreground again. */
+    let gaps = 0;
+    for (let i = 1; i < merged.length; i++) {
+        let dt = merged[i][0] - merged[i - 1][0];
+        if (dt <= 0) continue;
+        /* Both ends inside the window: testing only the later sample lets a
+           step drag the whole gap behind it into the span. */
+        if (now - merged[i - 1][0] > window_ms) continue;
+        if (dt > DAILY_MAX_STEP_MS) {
+            gaps++;
+            continue;
+        }
+        steps.push([dt, merged[i][1] - merged[i - 1][1]]);
+    }
+
+    /* Lower median of the positive step rates. A single transaction cannot
+       move a median, which is what the test below relies on; taking the
+       LOWER one keeps that true down to two steps, where the upper median
+       would be the transaction itself. */
+    let rates = steps.map(s => s[1] / s[0]).filter(r => r > 0).sort((a, b) => a - b);
+    let median = rates.length ? rates[Math.floor((rates.length - 1) / 2)] : 0;
+
+    let kept = [];
+    let dropped = 0;
+    for (let s of steps) {
+        if (s[1] < 0 || (median > 0 && s[1] / s[0] > DAILY_STEP_OUTLIER * median)) {
+            dropped++;
+        } else {
+            kept.push(s);
+        }
+    }
+    let span = kept.reduce((a, s) => a + s[0], 0);
+    let gained = kept.reduce((a, s) => a + s[1], 0);
+    if (kept.length < DAILY_MIN_STEPS || span <= 0) {
+        return { rate: null, band: null, span: span, steps: kept.length,
+                 dropped: dropped, gaps: gaps };
+    }
+    let rate = gained / span;
+    /* Weighted variance of the per-step rates about the pooled rate, then
+       the standard error of a weighted mean of that many of them. A short
+       window is imprecise, and saying so is better than hiding it. */
+    let wvar = 0;
+    for (let s of kept) {
+        let d = s[1] / s[0] - rate;
+        wvar += s[0] * d * d;
+    }
+    wvar /= span;
+    return {
+        rate: 86400000 * rate,
+        band: rate > 0 ? 100 * Math.sqrt(wvar / kept.length) / rate : null,
+        span: span,
+        steps: kept.length,
+        dropped: dropped,
+        gaps: gaps
+    };
+}
+
+function daily_format_span(ms) {
+    let m = ms / 60000;
+    return m < 60 ? Math.round(m) + " min" : (m / 60).toFixed(1) + " h";
+}
+
+function calculdaily(newb) {
+    /* Accurate daily calculator by Lukas */
+    let now = Date.now();
+    if (typeof newb === "number" && Number.isFinite(newb)) {
+        let last = daily_samples[daily_samples.length - 1];
+        if (!last || now > last[0]) daily_samples.push([now, newb]);
+    }
+    /* Seed from the history store_balance() already persists, so a freshly
+       opened wallet is not blank - but only the part inside the retention
+       window, because that history spans months of separate sessions. */
+    if (daily_samples.length < 2) {
+        let dates = get_stored_balance("dates");
+        let balances = get_stored_balance();
+        for (let i = 0; i < dates.length; i++) {
+            if (now - dates[i] <= DAILY_KEEP_MS) {
+                daily_samples.push([dates[i], balances[i]]);
+            }
+        }
+        daily_samples.sort((a, b) => a[0] - b[0]);
+    }
+    daily_samples = daily_prune(daily_samples, now);
+
+    let results = DAILY_WINDOWS_MS.map(function(ms) {
+        return { ms: ms, est: daily_estimate(daily_samples, ms, now) };
+    });
+    let usable = results.filter(r => r.est.rate !== null);
+    if (!usable.length || !miners.length) {
+        /* No figure yet. Say why, rather than leaving "Please wait..." with
+           no explanation: if every step is a gap the tab was in the
+           background and waiting will not help, which is the opposite of
+           what a bare "please wait" implies. */
+        let longest = results[results.length - 1].est;
+        if (miners.length && longest.gaps > 0 && longest.steps === 0) {
+            $(".dailydetail").text(
+                "sampling stopped while this tab was in the background - the " +
+                "browser freezes a hidden tab's timers, and every step in the " +
+                "window is a gap longer than " +
+                (DAILY_MAX_STEP_MS / 60000) + " min. It has resumed; keep the " +
+                "tab in the foreground for about " +
+                (DAILY_MIN_STEPS * DAILY_MIN_STEP_MS / 60000) + " min.");
+        }
+        return;
+    }
+    let head = usable.find(r => r.est.band !== null &&
+                                r.est.band <= DAILY_GOOD_BAND_PCT);
+    if (!head) {
+        head = usable.reduce((best, r) =>
+            (r.est.band === null ? Infinity : r.est.band) <
+            (best.est.band === null ? Infinity : best.est.band) ? r : best);
+    }
+
+    $(".dailyprofit").text(round_to(1, head.est.rate));
+    $(".dailyband").text(head.est.band === null ? "" :
+                         " \u00b1 " + Math.round(head.est.band) + "%");
+    $(".dailywindows").text(results.map(function(r) {
+        let label = (r.ms / 60000) + " min: ";
+        if (r.est.rate === null) return label + "\u2014";
+        return label + round_to(1, r.est.rate) +
+               (r.est.band === null ? "" : "\u00b1" + Math.round(r.est.band) + "%");
+    }).join(" \u00b7 "));
+
+    let covered = daily_samples.length > 1
+        ? daily_samples[daily_samples.length - 1][0] - daily_samples[0][0]
+        : 0;
+    /* The real cadence, which is rarely the 5 s asked for: browsers throttle
+       a background tab's timers toward one per minute, and that is what
+       empties the shorter windows. */
+    let cadence = daily_samples.length > 1
+        ? Math.round(covered / (daily_samples.length - 1) / 1000) + " s"
+        : "\u2014";
+    $(".dailydetail").text(
+        head.est.steps + " steps over " + daily_format_span(head.est.span) +
+        " (window " + (head.ms / 60000) + " min), from " +
+        daily_samples.length + " samples over " + daily_format_span(covered) +
+        " (one per " + cadence + ")" +
+        (head.est.dropped ? " \u00b7 " + head.est.dropped +
+            " step(s) excluded as transactions" : "") +
+        " \u00b7 rolling, nothing older than " +
+        (DAILY_KEEP_MS / 60000) + " min");
+
+    $(".estimatedprofits_wait").fadeOut(function() {
+        $(".estimatedprofits_nominers").fadeOut(function() {
+            $(".estimatedprofits").fadeIn();
+        });
+    });
 }
 
 
@@ -1058,10 +1265,11 @@ const user_data = (req_username, first_open) => {
             store_balance(balance);
 
             if (first_open) oldb = balance;
-            if (balance != oldb) {
-                calculdaily(balance, oldb, user_items);
-                oldb = balance;
-            }
+            /* Every refresh, not only the ones that moved the balance: a
+               step with no gain is a measurement too, and the estimate is
+               windowed rather than cumulative. */
+            calculdaily(balance);
+            oldb = balance;
 
             /*function fetch_balance_data(username) {
                 fetch(`http://127.0.0.1:5000/historic_balance?username=${username}`)
