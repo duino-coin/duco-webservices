@@ -1,15 +1,36 @@
 {
-    "name": "Duino-Coin Web Wallet",
-    "short_name": "wallet",
-    "description": "Duino-Coin Web Wallet",
-    "icons": [
-        {
-            "src": "/assets/duco.svg",
-            "sizes": "400x400",
-            "type": "image/png"
-        }
-    ],
-    "start_url": "/index.html",
-    "display": "fullscreen",
-    "theme_color": "#f79f1f"
+  "name": "Duino-Coin Web Wallet",
+  "short_name": "wallet",
+  "description": "Duino-Coin Web Wallet",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "theme_color": "#ff4112",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/duco-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/duco-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/desktop-screenshot.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/assets/mobile-screenshot.png",
+      "sizes": "720x1280",
+      "type": "image/png"
+    }
+  ]
 }
