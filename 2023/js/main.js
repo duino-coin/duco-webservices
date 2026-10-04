@@ -3491,6 +3491,10 @@ recovery_username = url.searchParams.get("username");
 recovery_hash = url.searchParams.get("hash");
 
 if (recovery_username && recovery_hash) {
+    url.searchParams.delete("username");
+    url.searchParams.delete("hash");
+    window.history.replaceState(window.history.state, "", url.href);
+
     fetch("https://server.duinocoin.com/recovering/" + recovery_username + "?hash=" + recovery_hash)
         .then(data => data.json()).then(data => {
             if (data.success && data.result.includes("new password")) {
