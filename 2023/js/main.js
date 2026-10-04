@@ -843,7 +843,7 @@ function create_prices(prices) {
     delete prices.nodes;
     delete prices.furim;
     delete prices.fluffy;
-    //delete prices.nano; // currently unavailable
+    delete prices.bitstorage; // bitsorage shut down
     delete prices.xmg; // currently unavailable
 
     // global price
@@ -906,11 +906,11 @@ function create_prices(prices) {
             icon = "assets/sunswap.png";
             type = "wDUCO <i class='fa fa-exchange-alt'></i> TRX";
             link = "https://sunswap.com/#/scan/detail/TWYaXdxA12JywrUdou3PFD1fvx2PWjqK9U";
-   /*     } else if (price == "bitstorage") {
+        } else if (price == "bitstorage") {
             name = "Bitstorage";
             icon = "assets/bitstorage.png";
             type = "DUCO <i class='fa fa-exchange-alt'></i> USDT";
-            link = "https://bitstorage.finance/refcode/8sv3ba"; */
+            link = "https://bitstorage.finance/refcode/8sv3ba"; 
         } 
 
         if (prices[price]["price"] > 0) {
